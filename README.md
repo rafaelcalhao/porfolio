@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Meu Portfólio de Desenvolvedor Full-Stack
 
-## Getting Started
+Bem-vindo ao repositório do meu portfólio pessoal. Este projeto foi criado para mostrar minhas habilidades e experiência como desenvolvedor Full-Stack, apresentando os projetos em que trabalhei e as tecnologias que domino.
 
-First, run the development server:
+## 🚀 Visão Geral do Projeto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Este site serve como meu cartão de visitas digital. Aqui você encontrará:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+*   Uma introdução sobre mim e minha jornada na tecnologia.
+*   Uma seleção dos meus melhores projetos, com descrições, links e tecnologias utilizadas.
+*   Minhas informações de contato e links para redes profissionais.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Stack de Tecnologias
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Este projeto foi construído utilizando tecnologias modernas, escaláveis e eficientes, tanto no front-end quanto no back-end.
 
-## Learn More
+### **Front-End**
 
-To learn more about Next.js, take a look at the following resources:
+*   **[Next.js](https://nextjs.org/)**: Estrutura React para renderização no lado do servidor (SSR) e geração de sites estáticos (SSG).
+*   **[React](https://react.dev/)**: Biblioteca para construir interfaces de usuário.
+*   **[TypeScript](https://www.typescriptlang.org/)**: Superset do JavaScript que adiciona tipagem estática.
+*   **[Tailwind CSS](https://tailwindcss.com/)**: Framework CSS utility-first para estilização rápida e responsiva.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### **Back-End (Exemplos de tecnologias que posso integrar)**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+*   **[Node.js](https://nodejs.org/)**: Ambiente de execução JavaScript no lado do servidor.
+*   **[Express.js](https://expressjs.com/) / [Fastify](https://www.fastify.io/)**: Frameworks para construção de APIs RESTful.
+*   **Bancos de Dados**: Experiência com bancos de dados SQL (PostgreSQL, MySQL) e NoSQL (MongoDB, Redis).
+*   **Autenticação**: Implementação de sistemas de login com JWT (JSON Web Tokens) e OAuth.
 
-## Deploy on Vercel
+## 🏁 Como Executar o Projeto Localmente
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Siga os passos abaixo para configurar e executar o ambiente de desenvolvimento.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/seu-usuario/seu-repositorio.git
+    cd seu-repositorio
+    ```
+
+2.  **Instale as dependências:**
+    Este projeto utiliza `pnpm` como gerenciador de pacotes.
+    ```bash
+    pnpm install
+    ```
+
+3.  **Inicie o servidor de desenvolvimento:**
+    ```bash
+    pnpm dev
+    ```
+
+4.  **Abra no navegador:**
+    Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver o resultado.
+
+## 部署 (Deployment)
+
+O deploy deste projeto é feito automaticamente através da [Vercel](https://vercel.com/), a plataforma de nuvem dos criadores do Next.js, garantindo performance e escalabilidade.
