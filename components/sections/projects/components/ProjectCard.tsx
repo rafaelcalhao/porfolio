@@ -6,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { ArrowLeft } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
@@ -18,7 +19,7 @@ export function ProjectCard({ title, description, tags, href }: ProjectCardProps
   return (
     <Card className="bg-bg-elevated border-border-subtle rounded-2xl p-8 h-full flex flex-col hover:border-cta transition-colors">
       <CardHeader className="p-0">
-        <CardTitle className="text-2xl font-bold text-text-primary mb-3">
+        <CardTitle className="text-4xl font-bold force-text-primary-color mb-3">
           {title}
         </CardTitle>
       </CardHeader>
@@ -41,7 +42,7 @@ export function ProjectCard({ title, description, tags, href }: ProjectCardProps
           className="text-text-primary font-medium underline decoration-cta decoration-2 underline-offset-4 hover:decoration-cta-hover transition-colors inline-flex items-center gap-1"
         >
           Ver detalhes
-          <span>→</span>
+          <ArrowLeft />
         </a>
       </CardFooter>
     </Card>
