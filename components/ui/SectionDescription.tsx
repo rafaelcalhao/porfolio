@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 
-interface SectionDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {}
+type SectionDescriptionProps = React.HTMLAttributes<HTMLParagraphElement>;
 
 export function SectionDescription({ children, className, ...props }: SectionDescriptionProps) {
   return (

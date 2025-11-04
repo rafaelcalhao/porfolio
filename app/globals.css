@@ -1,128 +1,97 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   1. DEFINIÇÃO DAS CORES PRIMITIVAS (FONTE DA VERDADE)
+   DESIGN SYSTEM - RAFAEL PINHEIRO
+   Refactored to use light-dark() for Tailwind CSS v4
    ========================================================================== */
-@theme {
-  /* ACCENT - Amarelo Dourado */
-  --color-accent-400: oklch(0.88 0.16 85);
-  --color-accent-500: oklch(0.85 0.16 85);
-  --color-accent-600: oklch(0.78 0.16 82);
 
-  /* NEUTRALS - LIGHT MODE */
-  --color-neutral-0: oklch(0.98 0.002 85);
-  --color-neutral-50: oklch(0.99 0 0);
-  --color-neutral-100: oklch(0.96 0.003 85);
-  --color-neutral-200: oklch(0.92 0.004 0);
-  --color-neutral-300: oklch(0.85 0.005 0);
-  --color-neutral-400: oklch(0.65 0.004 0);
-  --color-neutral-500: oklch(0.50 0.003 0);
-  --color-neutral-600: oklch(0.40 0.003 0);
-  --color-neutral-700: oklch(0.30 0.002 0);
-  --color-neutral-800: oklch(0.22 0.002 0);
-  --color-neutral-900: oklch(0.15 0.001 0);
-
-  /* SEMANTIC STATES - SUCCESS, ERROR, ETC. */
-  --color-success-text: oklch(0.40 0.15 145);
-  --color-error-text: oklch(0.40 0.20 25);
-}
-
-/* DARK MODE PRIMITIVES */
-@media (prefers-color-scheme: dark) {
-  @theme {
-    --color-neutral-0: oklch(0.18 0.002 0);
-    --color-neutral-50: oklch(0.15 0.001 0);
-    --color-neutral-100: oklch(0.22 0.003 0);
-    --color-neutral-200: oklch(0.28 0.004 0);
-    --color-neutral-300: oklch(0.35 0.005 0);
-    --color-neutral-400: oklch(0.50 0.004 0);
-    --color-neutral-500: oklch(0.60 0.003 0);
-    --color-neutral-600: oklch(0.70 0.003 0);
-    --color-neutral-700: oklch(0.80 0.002 0);
-    --color-neutral-800: oklch(0.90 0.002 0);
-    --color-neutral-900: oklch(0.96 0.001 0);
-    --color-accent-500: oklch(0.87 0.16 85);
-  }
-}
-
-/* ==========================================================================
-   2. ALIASES SEMÂNTICOS (COMO USAR AS CORES)
-   ========================================================================== */
-@theme {
-  --color-bg-primary: var(--color-neutral-0);
-  --color-bg-secondary: var(--color-neutral-100);
-  --color-bg-elevated: var(--color-neutral-50);
-  --color-text-primary: var(--color-neutral-800);
-  --color-text-secondary: var(--color-neutral-600);
-  --color-text-tertiary: var(--color-neutral-500);
-  --color-text-disabled: var(--color-neutral-400);
-  --color-border-subtle: var(--color-neutral-200);
-  --color-border-default: var(--color-neutral-300);
-  --color-cta: var(--color-accent-500);
-  --color-cta-hover: var(--color-accent-600);
-}
-
-/* ==========================================================================
-   3. CAMADA DE TRADUÇÃO (CSS Vars para shadcn)
-   ========================================================================== */
-:root {
-  --background: var(--color-bg-primary);
-  --foreground: var(--color-text-primary);
-  --card: var(--color-bg-elevated);
-  --card-foreground: var(--color-text-primary);
-  --popover: var(--color-bg-elevated);
-  --popover-foreground: var(--color-text-primary);
-  --primary: var(--color-cta);
-  --primary-foreground: var(--color-neutral-800);
-  --secondary: var(--color-bg-secondary);
-  --secondary-foreground: var(--color-text-primary);
-  --muted: var(--color-bg-secondary);
-  --muted-foreground: var(--color-text-secondary);
-  --accent: var(--color-cta);
-  --accent-foreground: var(--color-neutral-800);
-  --destructive: var(--color-error-text);
-  --border: var(--color-border-default);
-  --input: var(--color-border-subtle);
-  --ring: var(--color-cta);
-  --radius: 0.625rem;
-}
-
-.dark {
-  --primary-foreground: var(--color-neutral-800);
-}
-
-/* ==========================================================================
-   4. GLUE PARA O TAILWIND (Torna as classes bg-background, etc. válidas)
-   ========================================================================== */
-@theme {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --color-card: var(--card);
-    --color-card-foreground: var(--card-foreground);
-    --color-popover: var(--popover);
-    --color-popover-foreground: var(--popover-foreground);
-    --color-primary: var(--primary);
-    --color-primary-foreground: var(--primary-foreground);
-    --color-secondary: var(--secondary);
-    --color-secondary-foreground: var(--secondary-foreground);
-    --color-muted: var(--muted);
-    --color-muted-foreground: var(--muted-foreground);
-    --color-accent: var(--accent);
-    --color-accent-foreground: var(--accent-foreground);
-    --color-destructive: var(--destructive);
-    --color-border: var(--border);
-    --color-input: var(--input);
-    --color-ring: var(--ring);
-}
-
-/* ==========================================================================
-   5. ESTILOS DE BASE (do shadcn)
-   ========================================================================== */
 @layer base {
+  :root {
+    /* 1. SEMANTIC COLORS using light-dark() */
+    --color-bg-primary: light-dark(oklch(0.98 0.002 85), oklch(0.18 0.002 0));
+    --color-bg-secondary: light-dark(oklch(0.96 0.003 85), oklch(0.22 0.003 0));
+    --color-bg-elevated: light-dark(oklch(0.99 0 0), oklch(0.15 0.001 0));
+    --color-text-primary: light-dark(oklch(0.22 0.002 0), oklch(0.90 0.002 0));
+    --color-text-secondary: light-dark(oklch(0.40 0.003 0), oklch(0.70 0.003 0));
+    --color-text-tertiary: light-dark(oklch(0.50 0.003 0), oklch(0.60 0.003 0));
+    --color-text-disabled: light-dark(oklch(0.65 0.004 0), oklch(0.50 0.004 0));
+    --color-border-subtle: light-dark(oklch(0.92 0.004 0), oklch(0.28 0.004 0));
+    --color-border-default: light-dark(oklch(0.85 0.005 0), oklch(0.35 0.005 0));
+    --color-cta: light-dark(oklch(0.85 0.16 85), oklch(0.87 0.16 85));
+    --color-cta-hover: light-dark(oklch(0.78 0.16 82), oklch(0.80 0.16 82));
+
+    /* 2. SHADCN-UI VARIABLE ALIASES */
+    --background: var(--color-bg-primary);
+    --foreground: var(--color-text-primary);
+    --card: var(--color-bg-elevated);
+    --card-foreground: var(--color-text-primary);
+    --popover: var(--color-bg-elevated);
+    --popover-foreground: var(--color-text-primary);
+    --primary: var(--color-cta);
+    --primary-foreground: oklch(0.22 0.002 0); /* Black text on yellow button */
+    --secondary: var(--color-bg-secondary);
+    --secondary-foreground: var(--color-text-primary);
+    --muted: var(--color-bg-secondary);
+    --muted-foreground: var(--color-text-secondary);
+    --accent: var(--color-cta);
+    --accent-foreground: oklch(0.22 0.002 0);
+    --destructive: light-dark(oklch(0.55 0.23 25), oklch(0.60 0.25 25));
+    --destructive-foreground: light-dark(oklch(0.99 0 0), oklch(0.99 0 0));
+    --border: var(--color-border-default);
+    --input: var(--color-border-subtle);
+    --ring: var(--color-cta);
+    --radius: 0.625rem;
+  }
+
+  /* 4. ESTILOS DE BASE (do shadcn + design system) */
   * {
     @apply border-border;
   }
+  
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* ==========================================================================
+   3. MAPEAMENTO PARA TAILWIND (torna as classes funcionarem)
+   ========================================================================== */
+@theme {
+  /* Aliases Semânticos */
+  --color-bg-primary: var(--color-bg-primary);
+  --color-bg-secondary: var(--color-bg-secondary);
+  --color-bg-elevated: var(--color-bg-elevated);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-tertiary: var(--color-text-tertiary);
+  --color-text-disabled: var(--color-text-disabled);
+  --color-border-subtle: var(--color-border-subtle);
+  --color-border-default: var(--color-border-default);
+  --color-cta: var(--color-cta);
+  --color-cta-hover: var(--color-cta-hover);
+
+  /* Shadcn Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+.force-text-primary-color {
+  color: var(--color-text-primary);
 }

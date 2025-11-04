@@ -1,3 +1,5 @@
+'use client'
+
 import { useTheme } from "next-themes"
 import { Button } from "./ui/button"
 import { LuMoon, LuSunDim } from "react-icons/lu"
@@ -14,12 +16,12 @@ export const ThemeSwitch = () => {
   }
 
   return (
-    <Button onClick={handleToggleTheme}>
+    <Button onClick={handleToggleTheme} variant='ghost' size='icon' className="absolute top-0 right-0 -translate-x-3 translate-y-3">
       {
         theme === 'light' ? (
-          <LuSunDim/>
+          <LuSunDim className="size-3.5"/>
         )  : (
-          <LuMoon/>
+          <LuMoon className="size-3.5"/>
         )
       }
 

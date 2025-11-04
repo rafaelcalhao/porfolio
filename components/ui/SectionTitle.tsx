@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 
-interface SectionTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {}
+type SectionTitleProps = React.HTMLAttributes<HTMLHeadingElement>;
 
 export function SectionTitle({ children, className, ...props }: SectionTitleProps) {
   return (
